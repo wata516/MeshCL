@@ -1,4 +1,4 @@
-//
+﻿//
 //  ModelLoaderFactory.cpp
 //  MeshCL
 //
@@ -6,10 +6,13 @@
 //  Copyright (c) 2013年 Koichiro. All rights reserved.
 //
 
-#include "MeshCL/Common/ModelLoaderFactory.h"
+#include <boost/function.hpp>
+#include <boost/array.hpp>
+#include <boost/bind.hpp>
+#include <MeshCL/Common/ModelLoaderFactory.h>
+#include <MeshCL/Common/IModelLoader.h>
 
-using MeshCL;
-
+namespace MeshCL {
 namespace Model {
 
 //!	@brief	FBXのローダーを作成する
@@ -18,15 +21,16 @@ Error::Result FBXCreate( ILoader *pLoader )
 	return Error::ID_OK;
 }
 
-Error::Result create( CREATE_TYPE type, ILoader *pLoader )
+Error::Result LoaderFactory::create( CREATE_TYPE type, ILoader *pLoader )
 {
 	pLoader = 0;
 
-	boost::array< boost::function< Error::Result( ILoader * )>, CREATE_TYPE_MAX > functions = {
-		boost::bind( &FBXCreate, pLoader );
+	static const boost::array< boost::function< Error::Result( ILoader * )>, CREATE_TYPE_MAX > functions = {
+		boost::bind( &FBXCreate, pLoader )
 	};
 
-	return *(functions[ type ]);
+	return functions[ type ]( pLoader );
 }
 
+}
 }

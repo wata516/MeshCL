@@ -1,4 +1,4 @@
-//
+﻿//
 //  ModelLoaderFactory.h
 //  MeshCL
 //
@@ -8,7 +8,16 @@
 
 #pragma once
 
-#include "MeshCL/Common/ErrorId.h"
+#include <MeshCL/Common/ErrorResult.h>
+
+
+namespace MeshCL
+{
+	namespace Model
+	{
+		class ILoader;
+	}
+}
 
 namespace MeshCL
 {

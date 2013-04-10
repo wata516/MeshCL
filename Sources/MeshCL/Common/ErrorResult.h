@@ -1,4 +1,4 @@
-//
+﻿//
 //  ILoader.h
 //  MeshCL
 //
@@ -9,7 +9,7 @@
 #pragma once
 
 #include <boost/optional.hpp>
-#include "MeshCL/Common/ErrorId.h>
+#include <MeshCL/Common/ErrorId.h>
 
 namespace MeshCL
 {
@@ -17,12 +17,9 @@ namespace MeshCL
 	{
 		class Result : boost::optional< Id >
 		{
-			//!	@brief	基底クラスのタイプ
-			typedef boost::optional< Id > BaseType;
-
 			public:
 				//!	@brief	コンストラクタ
-				Result( const Id &id ) : BaseType( id ) { }
+				Result( const Id &id ) { assign( id ); }
 
 			public:
 				//!	@brief	使われているかどうか
