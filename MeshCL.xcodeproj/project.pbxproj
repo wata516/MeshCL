@@ -12,6 +12,9 @@
 		BEA5618A17159E9C00291EAD /* IModelLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA5618517159E9C00291EAD /* IModelLoader.h */; };
 		BEA5618B17159E9C00291EAD /* ModelLoaderFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEA5618617159E9C00291EAD /* ModelLoaderFactory.cpp */; };
 		BEA5618C17159E9C00291EAD /* ModelLoaderFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA5618717159E9C00291EAD /* ModelLoaderFactory.h */; };
+		BEA561A51715AA8100291EAD /* IManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA561A41715AA8100291EAD /* IManager.h */; };
+		BEA561A71715AA8F00291EAD /* Manager.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA561A61715AA8F00291EAD /* Manager.h */; };
+		BEA561AD1715AC7200291EAD /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEA561AC1715AC7200291EAD /* Manager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		BEA5618517159E9C00291EAD /* IModelLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IModelLoader.h; path = Sources/MeshCL/Common/IModelLoader.h; sourceTree = "<group>"; };
 		BEA5618617159E9C00291EAD /* ModelLoaderFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModelLoaderFactory.cpp; path = Sources/MeshCL/Common/ModelLoaderFactory.cpp; sourceTree = "<group>"; };
 		BEA5618717159E9C00291EAD /* ModelLoaderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelLoaderFactory.h; path = Sources/MeshCL/Common/ModelLoaderFactory.h; sourceTree = "<group>"; };
+		BEA561A41715AA8100291EAD /* IManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IManager.h; path = Sources/MeshCL/Common/IManager.h; sourceTree = "<group>"; };
+		BEA561A61715AA8F00291EAD /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Manager.h; path = Sources/MeshCL/FBX/Manager.h; sourceTree = "<group>"; };
+		BEA561AC1715AC7200291EAD /* Manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Manager.cpp; path = Sources/MeshCL/FBX/Manager.cpp; sourceTree = "<group>"; };
 		BEFE0A8A17144EA600F8B0A5 /* libMeshCL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMeshCL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -46,6 +52,7 @@
 		BEA5618217159E8600291EAD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BEA561A41715AA8100291EAD /* IManager.h */,
 				BEA5618317159E9C00291EAD /* ErrorId.h */,
 				BEA5618417159E9C00291EAD /* ErrorResult.h */,
 				BEA5618517159E9C00291EAD /* IModelLoader.h */,
@@ -58,6 +65,8 @@
 		BEA5618D17159EA600291EAD /* FBX */ = {
 			isa = PBXGroup;
 			children = (
+				BEA561AC1715AC7200291EAD /* Manager.cpp */,
+				BEA561A61715AA8F00291EAD /* Manager.h */,
 			);
 			name = FBX;
 			sourceTree = "<group>";
@@ -89,6 +98,8 @@
 				BEA5618917159E9C00291EAD /* ErrorResult.h in Headers */,
 				BEA5618A17159E9C00291EAD /* IModelLoader.h in Headers */,
 				BEA5618C17159E9C00291EAD /* ModelLoaderFactory.h in Headers */,
+				BEA561A51715AA8100291EAD /* IManager.h in Headers */,
+				BEA561A71715AA8F00291EAD /* Manager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA5618B17159E9C00291EAD /* ModelLoaderFactory.cpp in Sources */,
+				BEA561AD1715AC7200291EAD /* Manager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +185,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -184,6 +197,7 @@
 					"$(OTHER_CFLAGS)",
 					"-I/opt/local/include",
 					"-ISources",
+					"-I\"/Applications/Autodesk/FBX SDK/2013.3/include\"",
 				);
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -207,6 +221,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -217,6 +232,7 @@
 					"$(OTHER_CFLAGS)",
 					"-I/opt/local/include",
 					"-ISources",
+					"-I\"/Applications/Autodesk/FBX SDK/2013.3/include\"",
 				);
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";

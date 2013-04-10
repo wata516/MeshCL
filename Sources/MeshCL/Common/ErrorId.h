@@ -14,6 +14,7 @@ namespace MeshCL
 	{
 		enum Id {
 			ID_OK,
+            ID_FAILED,
 		};
 	}
 }
