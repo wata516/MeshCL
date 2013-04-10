@@ -6,7 +6,9 @@
 //  Copyright (c) 2013年 Koichiro. All rights reserved.
 //
 
-#include "MeshCL/Common/Error.h"
+#pragma once
+
+#include "MeshCL/Common/ErrorId.h"
 
 namespace MeshCL
 {
@@ -16,12 +18,12 @@ namespace MeshCL
         {
         public:
         	enum CREATE_TYPE {
-        		TYPE_FBX,	//!<	FBXローダー
-        		TYPE_MAX	//!<	タイプの数
+        		CREATE_TYPE_FBX,	//!<	FBXローダー
+        		CREATE_TYPE_MAX		//!<	タイプの数
 			};
 
 			//!	@brief	ローダーを作成
-            static Error::Result create( CREATE_TYPE type );
+            static Error::Result create( CREATE_TYPE type, ILoader *pLoader );
         };
     }
 }
