@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BEFE0AA1171451CF00F8B0A5 /* IModelLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFE0A9E171451CF00F8B0A5 /* IModelLoader.h */; };
-		BEFE0AA2171451CF00F8B0A5 /* ModelLoaderFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFE0A9F171451CF00F8B0A5 /* ModelLoaderFactory.h */; };
+		BEA5618817159E9C00291EAD /* ErrorId.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA5618317159E9C00291EAD /* ErrorId.h */; };
+		BEA5618917159E9C00291EAD /* ErrorResult.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA5618417159E9C00291EAD /* ErrorResult.h */; };
+		BEA5618A17159E9C00291EAD /* IModelLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA5618517159E9C00291EAD /* IModelLoader.h */; };
+		BEA5618B17159E9C00291EAD /* ModelLoaderFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEA5618617159E9C00291EAD /* ModelLoaderFactory.cpp */; };
+		BEA5618C17159E9C00291EAD /* ModelLoaderFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA5618717159E9C00291EAD /* ModelLoaderFactory.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BEA5618317159E9C00291EAD /* ErrorId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorId.h; path = Sources/MeshCL/Common/ErrorId.h; sourceTree = "<group>"; };
+		BEA5618417159E9C00291EAD /* ErrorResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorResult.h; path = Sources/MeshCL/Common/ErrorResult.h; sourceTree = "<group>"; };
+		BEA5618517159E9C00291EAD /* IModelLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IModelLoader.h; path = Sources/MeshCL/Common/IModelLoader.h; sourceTree = "<group>"; };
+		BEA5618617159E9C00291EAD /* ModelLoaderFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModelLoaderFactory.cpp; path = Sources/MeshCL/Common/ModelLoaderFactory.cpp; sourceTree = "<group>"; };
+		BEA5618717159E9C00291EAD /* ModelLoaderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelLoaderFactory.h; path = Sources/MeshCL/Common/ModelLoaderFactory.h; sourceTree = "<group>"; };
 		BEFE0A8A17144EA600F8B0A5 /* libMeshCL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMeshCL.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEFE0A9E171451CF00F8B0A5 /* IModelLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IModelLoader.h; sourceTree = "<group>"; };
-		BEFE0A9F171451CF00F8B0A5 /* ModelLoaderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLoaderFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,10 +34,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BEA5618117159E7C00291EAD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BEA5618D17159EA600291EAD /* FBX */,
+				BEA5618217159E8600291EAD /* Common */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		BEA5618217159E8600291EAD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BEA5618317159E9C00291EAD /* ErrorId.h */,
+				BEA5618417159E9C00291EAD /* ErrorResult.h */,
+				BEA5618517159E9C00291EAD /* IModelLoader.h */,
+				BEA5618617159E9C00291EAD /* ModelLoaderFactory.cpp */,
+				BEA5618717159E9C00291EAD /* ModelLoaderFactory.h */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		BEA5618D17159EA600291EAD /* FBX */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FBX;
+			sourceTree = "<group>";
+		};
 		BEFE0A8117144EA600F8B0A5 = {
 			isa = PBXGroup;
 			children = (
-				BEFE0A9C171451CF00F8B0A5 /* Sources */,
+				BEA5618117159E7C00291EAD /* Sources */,
 				BEFE0A8B17144EA600F8B0A5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,31 +78,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BEFE0A9C171451CF00F8B0A5 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				BEFE0A9D171451CF00F8B0A5 /* common */,
-				BEFE0AA0171451CF00F8B0A5 /* FBX */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		BEFE0A9D171451CF00F8B0A5 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				BEFE0A9E171451CF00F8B0A5 /* IModelLoader.h */,
-				BEFE0A9F171451CF00F8B0A5 /* ModelLoaderFactory.h */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		BEFE0AA0171451CF00F8B0A5 /* FBX */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FBX;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -76,8 +85,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEFE0AA1171451CF00F8B0A5 /* IModelLoader.h in Headers */,
-				BEFE0AA2171451CF00F8B0A5 /* ModelLoaderFactory.h in Headers */,
+				BEA5618817159E9C00291EAD /* ErrorId.h in Headers */,
+				BEA5618917159E9C00291EAD /* ErrorResult.h in Headers */,
+				BEA5618A17159E9C00291EAD /* IModelLoader.h in Headers */,
+				BEA5618C17159E9C00291EAD /* ModelLoaderFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA5618B17159E9C00291EAD /* ModelLoaderFactory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +177,16 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/opt/local/include",
+					"-ISources",
+				);
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -192,8 +211,15 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/opt/local/include",
+					"-ISources",
+				);
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
