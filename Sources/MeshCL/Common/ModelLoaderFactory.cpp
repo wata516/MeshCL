@@ -25,7 +25,7 @@ Error::Result LoaderFactory::create( CREATE_TYPE type, ILoader *pLoader )
 {
 	pLoader = 0;
 
-	static const boost::array< boost::function< Error::Result( ILoader * )>, CREATE_TYPE_MAX > functions = {
+    const boost::array< boost::function< Error::Result( ILoader * )>, CREATE_TYPE_MAX > functions = {
 		boost::bind( &FBXCreate, pLoader )
 	};
 
